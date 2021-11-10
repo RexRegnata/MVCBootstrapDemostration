@@ -1,0 +1,68 @@
+{
+  "Title": "Questionnaire",
+  "Email": "www.randomemail@gmail.com",
+  "Questions": [
+    {
+      "Id": 0,
+      "Type": "radiobutton",
+      "Question": "How do you like my website?",
+      "Answers": [
+        "Very much",
+        "It's awful"
+      ]
+    },
+    {
+      "Id": 1,
+      "Type": "radiobutton",
+      "Question": "Would you hire me?",
+      "Answers": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "Id": 2,
+      "Type": "text",
+      "Question": "How do you do?"
+    },
+    {
+      "Id": 3,
+      "Type": "text",
+      "Question": "What is your password?"
+    },
+    {
+      "Id": 4,
+      "Type": "text",
+      "Question": "What is your credit card number?"
+    },
+    {
+      "Id": 5,
+      "Type": "text",
+      "Question": "What is your CVV"
+    },
+    {
+      "Id": 6,
+      "Type": "text",
+      "Question": "What is your secret password"
+    },
+    {
+      "Id": 7,
+      "Type": "radiobutton",
+      "Question": "Do you trust this site?",
+      "Answers": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "Id": 8,
+      "Type": "text",
+      "Question": "What is your favourite movie?"
+    },
+    {
+      "Id": 9,
+      "Type": "text",
+      "Question": "Why is your favourite movie Blade Runner?"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+﻿@model MVCBootstrapDemo.Models.QuestionnaireModel
+
+@{
+    ViewData["Title"] = "Index";
+    int i = 0;
+    int j = 0;
+    int k = 0;
+}
+
+<h1>@Html.DisplayFor(model => Model.Title)</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Questions
+            </th>
+            <th>
+                Answers
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <form asp-action="Index">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            @foreach (var item in Model.Questions)
+            {
+            <tr>
+
+                <td>
+                        @item.Question
+                </td>
+                    @if (item.Type == "radiobutton" && item.Answers != null)
+                    {
+                    <td>
+                        <div class="container">
+                            <div class="row">
+
+                                    @foreach (var answer in item.Answers)
+                                    {
+                                    <div class="col--12 col-sm-12 col-md-6">
+                                        <input type="radio" asp-for="Questions[k].Answers[i]" value=@answer /> @answer<br />
+                                    </div>
+                                    }
+                            </div>
+                        </div>
+
+                    </td>
+                        i++;
+                    }
+                    @if (item.Type == "text")
+                    {
+                    <td>
+                        <input class="form-control" asp-for="Questions[k].Answers[j]" type="text" placeholder="Answer">
+                    </td>
+                        i = 0;
+                        j++;
+                    }
+
+            </tr>
+                k++;
+            }
+
+        <tr>
+            <td>
+                <input asp-action="Index" class="btn btn-primary" type="submit" value="Submit" />
+            </td>
+        </tr>
+
+        </form>
+
+    </tbody>
+    </div>
+</table>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
